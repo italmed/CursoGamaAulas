@@ -20,7 +20,7 @@ public class Exercicio01 {
 
 
         // outra forma de fazer com vetor:
-        System.out.println("\n\noutra forma de fazer com vetor");
+        System.out.println("\n\nOutra forma de fazer com vetor");
         char fraseVetor[] = frase.toCharArray();
 
         for (int i = 0; i < fraseVetor.length; i++){
