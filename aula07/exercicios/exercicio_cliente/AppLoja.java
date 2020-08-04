@@ -2,7 +2,7 @@ package exercicios.exercicio_cliente;
 
 public class AppLoja {
     public static void main(String[] args) {
-        Cliente c1 = new Cliente("Carlos", "carlos@asas.com");
+        Cliente c1 = new Cliente("Carlos", "carlos@asas.com", "Filho", "email do filho");
         ClienteVip c2 = new ClienteVip("Milton", "Milton@asas.com", 1000);
 
         c1.colocarCredito(100);

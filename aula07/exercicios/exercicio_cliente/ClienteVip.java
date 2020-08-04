@@ -12,7 +12,7 @@ public class ClienteVip extends Cliente {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return super.toString() + " - Credito especial: " + creditoEspecial;
+        return getNome() + " - " + getEmail() + " - Credito: R$" + getCredito() + " - Credito especial: " + creditoEspecial + "\n" + getDependente();
     }
 
     @Override
