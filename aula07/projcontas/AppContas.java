@@ -8,10 +8,9 @@ public class AppContas {
         Scanner in = new Scanner(System.in);
         int numeroConta;
         double valor, limite;
-        int opcao, soma, numContas;
+        int opcao;
 
-        ArrayList<Conta> contas = new ArrayList<>();
-
+        GerenciaContas contas = new GerenciaContas();
         Conta conta = null;
 
         do {
@@ -29,15 +28,14 @@ public class AppContas {
                 case 1:
                     System.out.println("Informe o número da conta corrente:");
                     numeroConta = in.nextInt();
-                    conta = new ContaCorrente(numeroConta);
-                    contas.add(conta);
+                    contas.novaConta(new ContaCorrente(numeroConta));
+
                     break;
 
                 case 2:
                     System.out.println("Informe o número da poupança:");
                     numeroConta = in.nextInt();
-                    conta = new ContaPoupanca(numeroConta);
-                    contas.add(conta);
+                    contas.novaConta(new ContaPoupanca(numeroConta));
                     break;
 
                 case 3:
@@ -45,67 +43,25 @@ public class AppContas {
                     numeroConta = in.nextInt();
                     System.out.println("Informe o limite:");
                     limite = in.nextDouble();
-                    conta = new ContaEspecial(numeroConta, limite);
-                    contas.add(conta);
+                    contas.novaConta(new ContaEspecial(numeroConta, limite));
                     break;
 
                 case 4:
                     System.out.println("Informe o número da conta:");
                     numeroConta = in.nextInt();
-                    soma = 0;
-                    numContas = contas.size();
-
-                    for (Conta c : contas) {
-                        if (c.getNumero() == numeroConta) {
-                            System.out.println(c.exibir());
-                        }
-                        else {
-                            soma++;
-                        }
-                    }
-                    if (soma == numContas){
-                        System.out.println("Esta conta não existe.");
-                    }
+                    System.out.println(contas.getInfo(numeroConta));
                     break;
 
                 case 5:
                     System.out.println("Informe o número da conta:");
                     numeroConta = in.nextInt();
-                    soma = 0;
-                    numContas = contas.size();
-                    for (Conta c : contas) {
-                        if (c.getNumero() == numeroConta) {
-                            System.out.println("Informe o valor do saque:");
-                            double sacar = in.nextDouble();
-                            System.out.println(c.saque(sacar));
-                        }
-                        else {
-                            soma++;
-                        }
-            
-                    }
-                    if (soma == numContas){
-                        System.out.println("Esta conta não existe.");
-                    }
+                    System.out.println(contas.saque(numeroConta));
                     break;
 
                 case 6:
                     System.out.println("Informe o número da conta:");
                     numeroConta = in.nextInt();
-                    soma = 0;
-                    numContas = contas.size();
-                    for (Conta c : contas) {
-                        if (c.getNumero() == numeroConta) {
-                            System.out.println("Informe o valor do depoisto:");
-                            valor = in.nextDouble();
-                            c.depositar(valor);
-                        }  else {
-                            soma++;
-                        }
-                    }
-                    if (soma == numContas){
-                        System.out.println("Esta conta não existe.");
-                    }
+                    System.out.println(contas.deposito(numeroConta));
                     break;
 
                 case 7:

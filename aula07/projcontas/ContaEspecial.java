@@ -13,7 +13,11 @@ public class ContaEspecial extends Conta {
             this.limite = limite;
         }
     }
-
+    @Override
+    public boolean depositar(double valor) {
+        // TODO Auto-generated method stub
+        return super.depositar(valor);
+    }
     @Override
     public boolean saque(double valor) {
         if (valor <= getSaldo() + limite) {
