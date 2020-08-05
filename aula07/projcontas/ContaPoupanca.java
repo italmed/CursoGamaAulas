@@ -19,8 +19,8 @@ public class ContaPoupanca extends Conta {
 
     @Override
     public boolean saque(double valor) {
-        if (valor + taxa <= getSaldo()) {
-            return super.saque(valor + taxa);
+        if (valor + 0.1f <= getSaldo()) {
+            return super.saque(valor + 0.1f);
         } else {
             return false;
         }

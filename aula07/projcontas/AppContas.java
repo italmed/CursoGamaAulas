@@ -1,18 +1,16 @@
 package projcontas;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AppContas {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int numeroConta;
-        double valor, limite;
+        double limite;
         int opcao;
 
         GerenciaContas contas = new GerenciaContas();
-        Conta conta = null;
-
+        //Conta conta = null;
         do {
             System.out.println("1-Novo conta corrente");
             System.out.println("2-Novo conta poupança");
@@ -36,6 +34,7 @@ public class AppContas {
                     System.out.println("Informe o número da poupança:");
                     numeroConta = in.nextInt();
                     contas.novaConta(new ContaPoupanca(numeroConta));
+
                     break;
 
                 case 3:

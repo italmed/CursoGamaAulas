@@ -8,7 +8,7 @@ public class ContaCorrente extends Conta {
 
     @Override
     public boolean depositar(double valor) {
-        super.depositar(valor - 0.1);
+        return super.depositar(valor-0.1f);
     }
 
     @Override
