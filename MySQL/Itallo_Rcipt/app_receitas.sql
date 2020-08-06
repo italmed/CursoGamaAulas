@@ -20,6 +20,7 @@ create table ingredientes(
 insert into receitas values(null, 'Croquete Russo', 'Petiscos', 90 , 'Descrição do modo de preparo aqui.');
 insert into receitas values(null, 'Frango assado', 'Assados', 100 , 'Descrição do modo de preparo aqui.');
 insert into receitas values(null, 'Ovo frito', 'Acompanhamentos', 6 , 'Descrição do modo de preparo aqui.');
+insert into receitas values(null, 'Batata Gratinada com File Mignon', 'Assados', 6 , 'Descrição do modo de preparo aqui.');
 
 insert into ingredientes values(1, 'Filé de frango', 'S');
 insert into ingredientes values(1, 'Manteiga', 'S');
@@ -36,6 +37,12 @@ insert into ingredientes values(2, 'Bacon', 'N');
 insert into ingredientes values(3, 'Ovo', 'S');
 insert into ingredientes values(3, 'Óleo', 'S');
 
+insert into ingredientes values(4, 'Batata', 'S');
+insert into ingredientes values(4, 'Filé Mignon', 'S');
+insert into ingredientes values(4, 'Calabresa', 'S');
+insert into ingredientes values(4, 'Tomate', 'S');
+insert into ingredientes values(4, 'Cebola', 'S');
+insert into ingredientes values(4, 'Manteiga', 'S');
 
 select * from ingredientes;
 
@@ -46,20 +53,20 @@ where receitas.nomeReceita like '%assado%';
 #dizer os ingredietnes e a consulta retorna quantos ingredientes dão match por receita
 select receitas.nomeREceita as Receita, count(ingredientes.ingrediente) as "Match de ingredientes" 
 	from receitas inner join ingredientes using(idReceita) 
-	where ingredientes.ingrediente like '%Frango%' 
-    or ingredientes.ingrediente like 'cebola' or ingredientes.ingrediente like 'ovo' or ingredientes.ingrediente like 'alho' 
+	where ingredientes.ingrediente like '%tomate%' 
+    or ingredientes.ingrediente like '%cebola%'
     group by receitas.nomeReceita order by count(ingredientes.ingrediente) desc;
 
 select receitas.nomeReceita, ingredientes.ingrediente from receitas inner join ingredientes using(idReceita) 
-where ingredientes.ingrediente like '%Frango%' or ingredientes.ingrediente like '%cebola%';
+where ingredientes.ingrediente like '%tomate%' or ingredientes.ingrediente like '%cebola%';
 
 -- selecionar a primeira receita que mais combina com a pesquisa realizada com base nos ingredientes
 
 #dizer os ingredietnes e a consulta retorna quantos ingredientes dão match por receita
 select receitas.nomeREceita as Receita
 	from receitas inner join ingredientes using(idReceita) 
-	where ingredientes.ingrediente like '%Frango%' 
-    or ingredientes.ingrediente like 'cebola' or ingredientes.ingrediente like 'ovo' or ingredientes.ingrediente like 'alho' 
+	where ingredientes.ingrediente like '%cebola%' 
+    or ingredientes.ingrediente like '%tomate%'
     group by receitas.nomeReceita order by count(ingredientes.ingrediente) desc 
     LIMIT 1;
 
@@ -67,7 +74,7 @@ select receitas.nomeREceita as Receita
 SELECT * from receitas inner join ingredientes using(idReceita)
 WHERE receitas.nomeReceita = (select receitas.nomeREceita as Receita
 	from receitas inner join ingredientes using(idReceita) 
-	where ingredientes.ingrediente like '%frango%' 
-    or ingredientes.ingrediente like '%ovo%'
+	where ingredientes.ingrediente like '%cebola%' 
+    or ingredientes.ingrediente like '%tomate%'
     group by receitas.nomeReceita order by count(ingredientes.ingrediente) desc 
     LIMIT 1);
