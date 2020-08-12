@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas</title>
+</head>
+<body>
+
+    <!-- ______________________ EXEMPLOS DE INPUTS ABAIXO _________________________ -->
+
+    <p>Campo de input texto abaixo:</p>
+    <!-- label fica antes da caixinha dizendo que deve ser digitado -->
+    <label for="txtnome">Digite o seu nome: </label>
+    <input type="text" name="txtnome" id="txtnome">
+    <br><br>
+
+    <!-- podemos usar sem o LABEL, com placeholder, na qual o texto fica dentro da caixinha -->
+    <input type="text" placeholder="Digite aqui" id="txtnome"> 
+
+    <br><br>
+
+    <!-- no caso abaixo, usando value, temos o valor direto dentro da caixinha -->
+    <input type="text" placeholder="Digite aqui o valor" value="Valor default" id="">
+
+    <!-- ______________________ EXEMPLOS DE BOTOES ABAIXO _________________________ -->
+    
+    <!-- duas opões, mas preferencialmente usar o <button></button> -->
+    <input type="button" value="Confirmar">
+    <button>Confirmar</button> 
+
+    <!-- ______________________ EXEMPLOS DE campos de senha _________________________ -->
+
+    <br><br>
+    <p>Campo de senha abaixo:</p>
+    <input type="password" placeholder="Digite sua senha">
+
+    <!-- ______________________ EXEMPLOS DE CHECK BOX E RADIO _________________________ -->
+    
+    <br><br>
+
+    <p>Botões de opção abaixo:</p>
+    <label for="ling">Qual sua linguagem de programação preferida?</label><br>
+        <!-- O NOME DO RADIO TEM QUE SER O MESMO PARA O GRUPO -->
+    <input type="radio" name="ling" id="" checked>Python <br> <!-- esta esta com cheched para começar a página marcada-->
+    <input type="radio" name="ling" id="">Java <br>
+    <input type="radio" name="ling" id="">C++ <br>
+
+    <br><br>
+
+    <p>Botões de opção abaixo:</p>
+    <input type="checkbox" name="" id="">Opção 1
+    <input type="checkbox" name="" id="">Opção 2
+    <input type="checkbox" name="" id="">Opção 3
+
+    <!-- ______________________ EXEMPLOS DE CAMPOS DE DATA _________________________ --> 
+
+    <br><br>
+    <p>Data de inscrição abaixo:</p>
+    <input type="date" name="dataInscricao" id="">
+
+    <!-- ______________________ EXEMPLOS DE range _________________________ --> 
+
+    <br><br>
+    <p>Avalie sua satisfalçao</p>
+    0<input type="range" name="" id="" max="100" min="0">100
+
+    <!-- ______________________ EXEMPLOS DE COMBOBOX _________________________ -->
+
+    <br><br>
+
+    <p>Escolha sua opção</p>
+    <Select>
+        <option value="" hidden>Escolha a opção</option> <!-- hidden diz que essa opção só aparece na primeira vez-->
+        <option value="">Opção 1</option>
+        <option value="">Opção 2</option>
+        <option value="">Opção 3</option>
+        <option value="">Opção 4</option>
+    </Select>
+
+        <!-- ______________________ EXEMPLOS DE TABELAS _________________________ -->
+
+        <br><br>
+
+        <table style="border-style: solid; border-color: black; border-width: 1px; border-bottom-style: dashed;">
+            <!-- tr = table row - cria uma linha ------- th é o cabecalho ---------- td é dados -->
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>tel</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Marcos</td>
+                <td>(11) 98765-4321</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Joao</td>
+                <td>(11) 91111-2233</td>
+            </tr>
+        </table>
+</body>
+</html>

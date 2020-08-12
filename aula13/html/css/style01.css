@@ -1,0 +1,23 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    color: rgba(32, 37, 37, 0.692);
+    font-size: 20px;
+    border-style: solid;
+}    
+
+h1{
+    color:green
+}
+
+/* utilzar ponto para estilizar CLASS, EXEMPLO: .indisponivel*/
+.indisponivel{
+    color: rgb(172, 170, 170);
+    font-style: italic;
+}
+
+/* utilizar # para estilziar ID */
+#item {
+    font-style: italic;
+}

@@ -1,0 +1,9 @@
+#menu{
+    border-style: solid;
+    border-radius: 5px;
+    border-color: darkgrey;
+    border-width: 1px;
+}
+#col2{
+    background-color: rgba(32, 37, 37, 0.2);
+}
